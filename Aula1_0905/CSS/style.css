@@ -1,0 +1,100 @@
+/* 3 formas para chamar: por tag HTML (p, h1), por ID(#), por CLASSE(.) 
+Metodologia: Mobile First ( Pensado principalmente para smartphones )
+            - Estilos otimizados para CELULARES ( Viewport pequeneo)
+            - Telas maiores recebem ajustes via Media Queries
+
+TAGS GLOBAIS: BODY(fontes)
+Media queries: Para desktp (final, para adaptar especificamente para telas maiores) */
+
+
+/*  RESETA O PADRÃO DO NAVEGADOR (* MARCA A PÁGINA INTEIRA)
+*{
+margin: 0;
+padding: 0;
+} 
+*/
+
+/* Q
+PIXEL: FOCA NA TELA,
+REM: NÃO SE ADAPTA A TELA
+*/
+
+/* ESTILOS GLOBAIS (mobile) */
+body{ /* RESETANDO A ESTRUTURA */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#f0f8ff;
+    /* background-color:#454e57 ; Cor de fundo */
+    color: #29292b;
+    margin: 0; /* Espaçamento externo */
+    padding: 0; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto DO elemento*/
+}
+
+header{
+    background-color:#4d7e86;
+    color: aliceblue;
+    padding: 30px 15px;
+}
+
+h1{
+    font-size: 1.8rem; /* Equivale a mais ou menos 28.8px. REM: medida adequada pois pega de acordo com o elemento (se adapta ao H1 etc) PESQUISAR */
+}
+
+main{
+    padding: 30px;
+}
+
+img{
+    width: 100%; /*Imagem ocupa toda a tela */
+    max-width: 300px; /* Tamanho máximo da sua img */ 
+    /* border: 1px solid black; */ /* TAMANHO e COR da Borda*/
+    /* border-radius: 100px; */  
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* RGB (RED GREEN BLUE) A  (APLHA- Transparência)*/
+}
+
+p{
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.button{
+    display: block;  /* O display BLOCK permite que o link ocupe toda a largura disponível, ou seja, o link é 'clicável' em TODO o bloco do link, não só no texto  */
+    background-color: #4d7e86;
+    border-radius: 18px;
+    color: white;
+    padding: 10px;
+    text-decoration: none; /* Decoração de texto, tipo sublinhado, etc*/
+    font-weight: bold;
+    transition: background-color 2s ease ; /* Transição suave(ease) com a cor de fundo (background-color) */
+}
+
+footer{
+    background-color: #18282b;
+    color: aliceblue;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+
+/* MEDIA QUERY: Para telas maiores (Desktop) -------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+    h1{
+        font-size: 2.5rem; 
+    }
+    p{
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 10px auto 30px; /* Ordem: Sentido horário: Então nesse: cima LADOS baixos */
+    }
+    .button{
+        display: inline-block;
+        padding: 25px;
+    }
+    footer{
+        position: fixed; /* Fixa o elemento no lugar (O LUGAR NÃO É DETERMINADO PELO POSITION, posicionar com outras propriedades)*/
+        bottom: 0; /* 'Prende' o rodapé no 'chão' da TELA (não do site)*/
+    }
+}
