@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Criar uma página de receita
+ OBJETVOS: Tabelas e Listas
+  -->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula03 - Receita+FlexBox</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="recipe-container"> <!--DIV WRAPPER: centraliza o conteúdo da receita-->
+        <h1>Bolo de Cenoura com Chocolate</h1>
+        <section class="ingredients"> <!-- SEÇÃO: Tag semântica agrupa conteúdos temáticos relacionados-->
+            <h2>Ingredientes</h2>
+            <ul class="flex-list"> <!-- Lista FLEXÍVEL; usar flexbox para muda de layout conforme o tamanho da tela Mobile: coluna. Desktop: Linha-->               
+                <li>3 Cenouras Médias</li>
+                <li>3 Ovos</li>
+                <li>1 Xícara de Óleo</li>
+                <li>2 Xícaras de Açúcar</li>
+                <li>2 Xícaras de Farinha</li>
+                <li>1 Colher de Fermento químico</li>
+            </ul> <!--UNordered List - Lista NÃO ordenada-->
+        </section>
+
+        <section class="info">
+            <h2>Informações Nutricionais</h2>
+            <!-- TABELA RESPONSIVA: exibe nutrientes e quantidade -->
+            <!-- No CSS aplicar Scroll horizontal em mobile se necessário -->
+
+            <table>
+                <thead> <!--Cabeçalho da tabela-->
+                    <tr> <!--TABLE-ROW: Linha da tabela-->
+                        <th>Nutrientes</th> <!--Estabelecendo o tanto de colunas que vai ter a tabela-->
+                        <th>QTDE</th>
+                    </tr>
+                </thead>
+                <tbody> <!--Corpo da tabela-->
+                    <tr> <!-- Linha 1 -->
+                        <td>Calorias</td> <!-- TableData é sempre de acoro com a quantidade de colunas que foram estabelecidas-->
+                        <td>320 kcal</td>
+                    </tr> 
+                    <tr> <!-- Linha 2 -->
+                        <td>Gorduras</td>
+                        <td>12g</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </section> <!-- Fechamento da seção informação-->
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Aula 02 - DIVs, Cards, CSS para cartão
+-- sempre pra celular primeiro
+
+
+ Tópicos abordados:
+display: flex - (centralizar elementos)
+boxshadow - (sombras de profundidade)
+hoover - (interatividade)
+responsive design - ()
+smooth transitions - (transições CSS)
+
+*/
+
+/* GLOBAIS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*ajusta a largura e altura*/
+}
+
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(253, 246, 236);
+    padding: 20px;
+    display: flex; /* Permite usar objetos de centralização */
+    justify-content: center; /* CENTRALIZA HORIZONTALMENTE*/
+    align-items: center; /*  */
+    min-height: 100vh; /*Altura mínima 100 viewport*/
+}
+
+.container{ /* HERDA po flox do body*/
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.product-card{
+    background-color: white;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    overflow: hidden; /* Garante que o conteudo não ultpr */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease; /* transform chamado no media care para completar o hover */
+}
+
+
+.product-card img{  /*Da pra referenciar uma tag dentro de outra que tem classe*/
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Garante que a imagem preencha too o espaço sem distorcer */
+}
+
+.card-content{
+    padding: 20px; 
+    text-align: center;
+}
+
+h3{
+    color: rgb(71, 61, 44);
+    font-size: 1.3rem; /* Tamanho fonte para mobile*/
+    margin-bottom: 10px;
+}
+p{
+    color: rgb(126, 114, 99);
+    font-size: 0.9rem;
+    line-height: 1.4; /* Espaçamento entre as linhas*/
+    margin-bottom: 20px; /*Espaçamento inferior*/
+}
+.price{
+    display: block; /* Faz o elemento ocupar a linha inteira*/
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(63, 134, 66);
+    margin-bottom: 10px;
+}
+
+.buy-btn{
+    display: block;
+    color: rgb(236, 253, 252);
+    text-decoration: none;
+    background-color: rgb(89, 115, 116);
+    padding: 12px;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+/* Media Care */
+@media (min-width: 1024px){ 
+    .product-card:hover{ /* Hover: O que ocorre quando o mouse está "em cima". */
+    transform: scale(1.05); /* Scale: indica o tamanho que será aumentado (ou diminuido, sendo 1 o tamanho atual) */
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+    .buy-btn:hover{
+        background-color: rgb(54, 69, 70); /*Escurece o botão no efeito hover*/
+    }
+}

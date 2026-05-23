@@ -1,0 +1,51 @@
+/*FOCO DA AULA:
+AULA 3
+- Container de receitas 
+- Títlos e Seções
+- Listas Flexíveis
+- Tabelas
+- Media Queries */
+
+
+
+/* ESTILOS GLOBAIS */
+*{  /*RESET PADRÃO*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(223, 221, 203);
+    padding: 15px;
+    color: #331f06;
+}
+
+.recipe-container{
+    background: #f8f5f1;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}""
+h1{
+    text-align: center;
+    color: #c97004;
+    font-size: 1.5rem;
+}
+.flex-list{
+    display: flex; /*Display ativa o modelo flexbox.*/
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre itens*/
+    list-style: none;
+}
+
+.flex-list li{
+    background-color: rgb(245, 235, 220);
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+}
+.info{
+    overflow-x: auto; /* Permite scroll Horizontal(x) se a tela ficar muito larga*/
+}
