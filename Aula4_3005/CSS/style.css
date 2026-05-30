@@ -1,0 +1,59 @@
+/* AULA 4 - Formulários; 
+Mobile First
+Tópicos principais:
+1: Estilização de inputs
+2. Layout
+
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'inter', sans-serif;
+    background-color: rgb(25, 194, 206);
+    padding: 20px;
+
+    /* FLEXBOX: para centralizar o formulário.
+    Justify content: centraliza horizontalmente
+    align item: açnhando no topo do mobile */
+
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    min-height: 100vh;
+}
+
+.form-wrapper{
+    background-color: rgb(217, 240, 240);
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    /* box-shadow:; */
+}
+h2{
+    text-align: center;
+    font-size: 1.4rem;
+    color: #20383a;
+    margin: 10px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+label{
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+input, select, textarea{
+    padding: 12px;
+    border: 1px solid rgb(200, 221, 218);
+    border-radius: 8px;
+    font-size: 1rem;
+}
