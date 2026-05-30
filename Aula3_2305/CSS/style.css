@@ -27,12 +27,16 @@ body{
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}""
+}
 h1{
     text-align: center;
     color: #c97004;
     font-size: 1.5rem;
 }
+h2{
+    padding: 25px;
+}
+
 .flex-list{
     display: flex; /*Display ativa o modelo flexbox.*/
     flex-direction: column;
@@ -48,4 +52,37 @@ h1{
 }
 .info{
     overflow-x: auto; /* Permite scroll Horizontal(x) se a tela ficar muito larga*/
+}
+
+table{
+    width: 100%;
+    min-width:300px; /* */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td{
+    padding: 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #d1c8c8;
+}
+
+/* MEDIA QUERY */
+@media (min-width:768px){
+.recipe-container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+h1{
+    font-size: 2.2rem;
+}
+.flex-list{
+    flex-direction: row;
+    justify-content: center;
+}
+.flex-list li{
+    padding: 10px 20px;
+    border-radius: 50px;
+    align-items: center;
+}
 }
