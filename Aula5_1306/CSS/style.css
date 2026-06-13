@@ -1,0 +1,55 @@
+/* 
+Aula 05 -  CSS para Layout de Notícias
+Header com logo e navegação
+Flexbox para o layout principal
+content para sidebar com proporção flex
+footer
+responsivo
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;    
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e0f2f5;
+}
+
+.main-header{
+    background-color: #0e171a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.logo{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    list-style: none;
+    /* padding: 0;  Não é necessário pois já foi resetado no *. */
+    gap: 20px;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color:#1b2d33;
+    
+}
+
+.post img{
+    width: 100%;
+}

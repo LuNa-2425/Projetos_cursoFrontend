@@ -38,7 +38,7 @@ h2{
     text-align: center;
     font-size: 1.4rem;
     color: #20383a;
-    margin: 10px;
+    margin-bottom: 25px;
 }
 
 .form-group{
@@ -56,4 +56,32 @@ input, select, textarea{
     border: 1px solid rgb(200, 221, 218);
     border-radius: 8px;
     font-size: 1rem;
+}
+
+button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #20383a;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* MEDIA QUERY */
+@media (min-width: 768px) {
+    body{
+        align-items: center;
+        background: linear-gradient(135deg, #34b0b9 0%, #3708b8 100%);
+    }
+    .form-wrapper{
+        padding: 50px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+    button:hover{
+        background-color: #345b5f;
+        cursor: pointer;
+    }
 }
