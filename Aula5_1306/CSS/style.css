@@ -16,6 +16,9 @@ responsivo
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e0f2f5;
+    display: flex;
+    flex-direction: column;
+    min-height:100vh; /*View port ....hmmm.... */
 }
 
 .main-header{
@@ -44,12 +47,91 @@ nav a{
     font-size: 0.9rem;
 }
 
-.sidebar a{
-    text-decoration: none;
-    color:#1b2d33;
+h1{
+    padding: 10px;
+}
+
+h3{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.layout-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+}
+
+p{
+    padding: 10px;
+    font-size: 0.9rem;
     
 }
 
 .post img{
     width: 100%;
+    height: auto;
+    border-radius: 7px;
 }
+
+.content, .sidebar {
+    background-color: #f4fafc;
+    padding: 20px;
+    border-radius: 9px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) ;
+}
+.sidebar ul, a{
+    list-style:none;
+    /* text-decoration: none; */
+    color: black ;
+}
+.sidebar li{
+    padding: 10px;
+}
+
+.main-footer{
+    text-align: center;
+    background-color: #0e171a;
+    color: #e0f2f5;
+    padding: 25px;
+    font-size: 0.8rem;
+    bottom: 0; 
+    /* position: absolute;  */
+    width: 100%;
+}
+
+
+
+/* 
+MEDIA QUERY
+ */
+
+ @media (min-width:992px) {
+    .main-header{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 100px;
+        text-align: left;
+    }
+    .layout-wrapper{
+        flex-direction: row;
+        margin: 40px auto;
+        max-width: 1100px;
+    }
+    .content{
+        flex: 3; /*  DIVIDINDO automaticamente, usando 75%, ou seja, 3/4  */
+    }
+    .sidebar { 
+        flex: 1;
+    } 
+    
+    a:hover{
+        color: #548899;
+    }
+
+    .main-footer{
+        position: absolute; /* Diferente do FIXED, que FIXA o elemento na POSIÇÃO da TELA, o absoute vai pelo arquivo, pela página*/
+        bottom: 0;
+    }
+ }
