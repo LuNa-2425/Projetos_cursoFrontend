@@ -1,9 +1,99 @@
 /* 
-AULA 6
+AULA 6 - CSS Galeria Responsiva
+- Grid responsável com Flex box
+- Overlay com posição absoluta
+- object-fit para imagens
+- Animações apenas para desktop
+- Múltiplas media queries
 
 */
 
 *{
     margin: 0;
-    box-sizing: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+    background-color: rgb(6, 8, 8);
+    color: aliceblue;
+    padding: 30px 15px;
+}
+
+h1{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.grid{ /* DIV da grade da galeria */
+    /* Flex-box : Criando um grid com flex-wrap
+    Padrão para criar grids responsíveis no CSS sem CSS Grid */
+    display: flex;
+    flex-wrap: wrap; /* quebra a linha qunado não cabem mais na tela*/
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* Itens da Galeria */
+.item{
+    position: relative; /* Cria contexto e posicionamento para o overlay ser  posicionado em relação */
+    width: 100%;
+    height: 250px;
+    overflow: hidden; /* Garante que a parte "vazada" da imagem seja escondido*/
+    border-radius: 10px;
+}
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre o que não se encaixa na margem indicada, preenchendo o espaço sem distorcê-la mas cortando ela*/
+}
+.overlay{
+    position: absolute; /* posicionar Overlay SOBRE a imagem (disponibilizado pois itens com hierarquia maior permitiram o flex)*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.4);
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente*/
+    align-items: center; /*centraliza verticalmente*/
+}
+
+
+/* MEDIA QUERY: tablet: 600px< */
+
+@media(min-width: 600px){
+    .item{
+        width: calc(50% - 15px); /* lebrando que queremos manter esses 15px do GAP 
+                                O CALC pega o 50% da largura (que foi estabelecida para ocupar 100% do grid)
+                                */
+    }
+}
+
+@media(min-width: 1024px){
+    body{
+        padding: 60px;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    .item{
+        width: calc(33.333% - 15px);
+    }
+    .item img{
+        transition: transform 0.5s ease ; /* Cofigurações do efeito*/
+    }
+    .item:hover img{
+        transform: scale(1.1); /* EFEITO */
+    }
+    .overlay{
+        opacity: 0; /*OVERLAY inicia invisível, mas terá tratamento no hover*/
+        transition: opacity 0.3s ease;
+        background-color: rgba(0,0,0, 0.7); /*fundo mais escuro no overlay*/
+    }
+    .item:hover .overlay{
+        opacity: 1; /* torna o ovelray visível*/
+    }
 }
